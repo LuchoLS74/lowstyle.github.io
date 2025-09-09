@@ -85,9 +85,20 @@ footer {
 
 @media (max-width: 768px) {
     .hero-bg {
-        height: 300px;
+        height: 100vh;
+        min-height: 500px;
     }
+    
     .nav-item {
         padding: 8px 12px;
+    }
+    
+    /* Mejoras específicas para móvil */
+    h1 {
+        line-height: 1.2;
+    }
+    
+    p {
+        line-height: 1.4;
     }
 }
