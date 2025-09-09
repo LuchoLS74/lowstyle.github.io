@@ -1,0 +1,93 @@
+:root {
+    --primary-red: #A52A2A; /* Bordó-like red */
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--black) 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-bg {
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(165,42,42,0.3)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/236c963a-8047-4552-889e-4c6ec0abaaad.png') no-repeat center/cover;
+    filter: contrast(1.2) brightness(0.8);
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.faq-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.detail {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.5s ease;
+}
+
+.detail.open {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.sale-card {
+    cursor: pointer;
+}
+
+.sale-card:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.rule-item {
+    background: rgba(165,42,42,0.2);
+    border-left: 5px solid var(--primary-red);
+}
+
+.sale-card img {
+    max-height: 150px;
+    object-fit: cover;
+}
+
+footer {
+    background: rgba(0,0,0,0.8);
+}
+
+.menu-icon::before {
+    content: '\2630'; /* Hamburger icon using Unicode, but avoid if possible - using text instead */
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .hero-bg {
+        height: 300px;
+    }
+    .nav-item {
+        padding: 8px 12px;
+    }
+}
