@@ -74,6 +74,23 @@ body {
     object-fit: cover;
 }
 
+.promo-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.promo-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.contact-card {
+    background: linear-gradient(135deg, var(--primary-red), #8B0000) !important;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
 footer {
     background: rgba(0,0,0,0.8);
 }
