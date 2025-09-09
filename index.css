@@ -48,12 +48,15 @@ body {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
+    text-align: left; /* Alinea todo a la izquierda */
+    padding: 10px 0; /* Espacio interno */
     transition: opacity 0.3s ease, max-height 0.5s ease;
 }
 
 .detail.open {
     opacity: 1;
-    max-height: 500px;
+    max-height: 70vh; /* 70% de la altura de la pantalla, para móviles y escritorio */
+    overflow-y: auto; /* Permite scroll si el contenido es más alto */
 }
 
 .sale-card {
