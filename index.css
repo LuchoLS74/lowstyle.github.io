@@ -105,12 +105,20 @@ footer {
 
 /* Animación base de fade-in hacia arriba */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
+/* IMPORTANTE: Los elementos empiezan ocultos */
 .animate-fadeIn {
-  animation: fadeIn 2s ease-out;
+  opacity: 0; /* ← Esto es clave */
+  animation: fadeIn 2s ease-out forwards; /* forwards mantiene el estado final */
 }
 
 /* Variantes de delay */
@@ -125,7 +133,6 @@ footer {
 .delay-3 {
   animation-delay: 3s;
 }
-
 
 @media (max-width: 768px) {
     .hero-bg {
