@@ -130,10 +130,6 @@ footer {
   animation-delay: 1s;
 }
 
-.delay-3 {
-  animation-delay: 0.5s;
-}
-
 @media (max-width: 768px) {
     .hero-bg {
         height: 100vh;
