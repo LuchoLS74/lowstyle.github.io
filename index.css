@@ -115,19 +115,9 @@ footer {
   }
 }
 
-/* IMPORTANTE: Los elementos empiezan ocultos */
 .animate-fadeIn {
-  opacity: 0; /* ← Esto es clave */
-  animation: fadeIn 2s ease-out forwards; /* forwards mantiene el estado final */
-}
-
-/* Variantes de delay */
-.delay-1 {
-  animation-delay: 1s;
-}
-
-.delay-2 {
-  animation-delay: 1s;
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
 }
 
 @media (max-width: 768px) {
