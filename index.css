@@ -105,7 +105,7 @@ footer {
 
 /* Texto con gradiente animado */
 .gradient-text {
-  background: linear-gradient(90deg, #FF0000, #FFFFFF, #FF0000);
+  background: linear-gradient(90deg, #820000, #820000, #820000);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
