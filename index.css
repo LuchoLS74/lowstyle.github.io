@@ -132,6 +132,12 @@ footer {
   animation-fill-mode: both; /* mantiene el estado final después de la animación */
 }
 
+.animate-fadeIn-delay2 {
+  animation: fadeIn 2s ease-out;
+  animation-delay: 2s; /* aparece después del párrafo */
+  animation-fill-mode: both;
+}
+
 @media (max-width: 768px) {
     .hero-bg {
         height: 100vh;
