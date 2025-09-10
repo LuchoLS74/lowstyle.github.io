@@ -110,7 +110,7 @@ footer {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 2s ease-out forwards;
+  animation: fadeIn 2s ease-out;
 }
 
 /* Variantes de delay */
