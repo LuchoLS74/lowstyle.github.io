@@ -47,7 +47,7 @@ function toggleSaleDetail(detailId) {
     }
 }
 
-async function updatePlayerCount() {
+function updatePlayerCount() {
     const playerCountElement = document.getElementById('player-count');
     
     if (!playerCountElement) {
