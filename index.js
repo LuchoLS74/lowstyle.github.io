@@ -47,7 +47,7 @@ function toggleSaleDetail(detailId) {
     }
 }
 
-function updatePlayerCount() {
+async function updatePlayerCount() {
     const playerCountElement = document.getElementById('player-count');
     
     if (!playerCountElement) {
@@ -103,6 +103,7 @@ function updatePlayerCount() {
         playerCountElement.style.color = '#10b981'; // Verde para indicar que el servidor está activo
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Página de Low Style - MTA SA cargada correctamente');
