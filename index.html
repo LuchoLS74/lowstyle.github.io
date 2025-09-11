@@ -34,7 +34,6 @@
 
     <!-- Main Content -->
     <main>
-    	<main>
         <!-- Home Section -->
         <section id="home" class="section active">
             <div class="hero-bg h-screen flex items-center justify-center">
@@ -205,122 +204,140 @@
 
         <!-- Sales Section -->
 		<!-- VIP -->
-		<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
-			<img class="mx-auto mb-4 rounded" src="assets/vip.png" alt="Golden star VIP badge">
-			<h3 class="font-semibold mb-2">VIP</h3>
-			<p>$5.000/mes - privilegios extra en el servidor.</p>
-			
-			<div id="vip-detail" class="detail">
-				<p class="mt-4">Incluye:</p>
-				<p class="mt-4 font-semibold">Opciones (para activar/desactivar):</p>
-				<ul class="list-disc list-inside mb-4">
-					<li>Regeneración de vida automática</li>
-					<li>Jetpack</li>
-					<li>Mira láser en las armas</li>
-					<li>Rastro de balas</li>
-					<li>Mensaje exclusivo en la pantalla al iniciar sesión</li>
-					<li>Cambiar tag en el chat</li>
-					<li>Nombre personalizado</li>
-				</ul>
+		<!-- Sales Section -->
+		<section id="sales" class="section container mx-auto px-4 py-16">
+			<h2 class="text-4xl font-bold mb-8 text-center">Ventas del servidor</h2>
 
-				<p class="mt-4 font-semibold">Inventario:</p>
-				<p>Espacio de 60/60</p>
+			<div class="grid md:grid-cols-3 gap-6">
+				<!-- VIP -->
+				<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
+					<img class="mx-auto mb-4 rounded" src="assets/vip.png" alt="Golden star VIP badge">
+					<h3 class="font-semibold mb-2">VIP</h3>
+					<p>$5.000/mes - privilegios extra en el servidor.</p>
+					
+					<div id="vip-detail" class="detail">
+						<p class="mt-4">Incluye:</p>
+						<p class="mt-4 font-semibold">Opciones (para activar/desactivar):</p>
+						<ul class="list-disc list-inside mb-4">
+							<li>Regeneración de vida automática</li>
+							<li>Jetpack</li>
+							<li>Mira láser en las armas</li>
+							<li>Rastro de balas</li>
+							<li>Mensaje exclusivo en la pantalla al iniciar sesión</li>
+							<li>Cambiar tag en el chat</li>
+							<li>Nombre personalizado</li>
+						</ul>
 
-				<p class="mt-4 font-semibold">Ploteos:</p>
-				<ul class="list-disc list-inside mb-4">
-					<li>Panel de ploteos</li>
-				</ul>
+						<p class="mt-4 font-semibold">Inventario:</p>
+						<p>Espacio de 60/60</p>
 
-				<p class="mt-4 font-semibold">Handlings:</p>
-				<ul class="list-disc list-inside mb-4">
-					<li>Panel para guardar / cargar / importar / exportar</li>
-				</ul>
+						<p class="mt-4 font-semibold">Ploteos:</p>
+						<ul class="list-disc list-inside mb-4">
+							<li>Panel de ploteos</li>
+						</ul>
 
-				<p class="mt-4 font-semibold">Armas:</p>
-				<ul class="list-disc list-inside mb-4">
-					<li>Kit de armas</li>
-					<li>Panel para elegir armas a elección</li>
-				</ul>
+						<p class="mt-4 font-semibold">Handlings:</p>
+						<ul class="list-disc list-inside mb-4">
+							<li>Panel para guardar / cargar / importar / exportar</li>
+						</ul>
 
-				<p class="mt-4 font-semibold">Texto personalizado:</p>
-				<p>/s (texto)</p>
+						<p class="mt-4 font-semibold">Armas:</p>
+						<ul class="list-disc list-inside mb-4">
+							<li>Kit de armas</li>
+							<li>Panel para elegir armas a elección</li>
+						</ul>
 
-				<p class="mt-4 font-semibold">Teleports:</p>
-				<ul class="list-disc list-inside mb-4">
-					<li>Teleports directos a todos los lugares del mapa</li>
-				</ul>
+						<p class="mt-4 font-semibold">Texto personalizado:</p>
+						<p>/s (texto)</p>
 
-				<p class="mt-4 font-semibold">Trabajos:</p>
-				<ul class="list-disc list-inside mb-4">
-					<li>Trabajo de camionero VIP (paga más que el resto)</li>
-				</ul>
+						<p class="mt-4 font-semibold">Teleports:</p>
+						<ul class="list-disc list-inside mb-4">
+							<li>Teleports directos a todos los lugares del mapa</li>
+						</ul>
 
-				<p class="mt-4 font-semibold">Autos:</p>
-				<ul class="list-disc list-inside mb-4">
-					<li>Porsche Carrera 911</li>
-					<li>Audi R8</li>
-					<li>Ferrari</li>
-				</ul>	
-			</div>
-		</div>
-		
-		<form id="vip-form" class="mt-4 w-full max-w-xs mx-auto">
-			<input type="text" placeholder="Tu nombre de usuario MTA SA" required class="w-full px-4 py-2 rounded-lg text-black">
-			<button class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg w-full mt-2">Adquirir VIP</button>
-		</form>
+						<p class="mt-4 font-semibold">Trabajos:</p>
+						<ul class="list-disc list-inside mb-4">
+							<li>Trabajo de camionero VIP (paga más que el resto)</li>
+						</ul>
 
-		
-        <!-- Vehículos privados -->
-        <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vehicle-detail')">
-            <img class="mx-auto mb-4 rounded" src="assets/auto.png" alt="Red sports car">
-            <h3 class="font-semibold mb-2">Vehículos privados</h3>
-            <p>$4.000/mes - Acceso a vehículos exclusivos.</p>
-            <div id="vehicle-detail" class="detail">
-                <p class="mt-4">Incluye: Un vehículo a elección exclusivo (slot).</p>
-            </div>
-        </div>
-		
-		<!-- Barrio privado -->
-        <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('barrio-detail')">
-            <img class="mx-auto mb-4 rounded" src="assets/barrio.png" alt="Barrio priv">
-			<h3 class="font-semibold mb-2">Barrio privado</h3>
-			<p>$3.000/mes - Casa en barrio privado.</p>
-			<div id="barrio-detail" class="detail">
-				<p class="mt-4">Incluye: Una casa a eleccion en el barrio privado.</p>
-			</div>
-		</div>
-		
-		<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('mansion-detail')">
-            <img class="mx-auto mb-4 rounded" src="assets/mansion.png" alt="Mansion priv">
-			<h3 class="font-semibold mb-2">Mansion privada</h3>
-			<p>$6.000/mes - Mansion moderna privada.</p>
-			<div id="mansion-detail" class="detail">
-				<p class="mt-4">Incluye: Una mansion de con terraza, pileta, estacionamiento, taller, banco, baño, living, habitacion, comedor, oficina, sala de juegos, sotano, helipuerto. Y un comando para ir directo y otro comando privado para invitar y expulsar a jugadores de la mansion.</p>
-			</div>
-		</div>
-		
-		<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('bunker-detail')">
-            <img class="mx-auto mb-4 rounded" src="assets/bunker.png" alt="Mansion priv">
-			<h3 class="font-semibold mb-2">Bunker privado</h3>
-			<p>$5.000/mes - Gran bunker privado.</p>
-			<div id="bunker-detail" class="detail">
-				<p class="mt-4">Incluye: Un bunker privado grande con muchas salas. Y un comando para ir directo y otro comando privado para invitar y expulsar a jugadores del bunker.</p>
-			</div>
-		</div>
+						<p class="mt-4 font-semibold">Autos:</p>
+						<ul class="list-disc list-inside mb-4">
+							<li>Porsche Carrera 911</li>
+							<li>Audi R8</li>
+							<li>Ferrari</li>
+						</ul>
 
-        <!-- Skins privadas -->
-        <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('skin-detail')">
-            <img class="mx-auto mb-4 rounded" src="assets/skin.png" alt="Customized character">
-				<h3 class="font-semibold mb-2">Skins privadas</h3>
-				<p>$3.000/mes - Skin personalizada.</p>
-				<div id="skin-detail" class="detail">
-					<p class="mt-4">Incluye: Una skin a elección privada.</p>
+						<form id="vip-form" class="mt-6 space-y-4" onclick="event.stopPropagation()">
+							<input 
+							  type="text" 
+							  id="username" 
+							  name="username" 
+							  placeholder="Tu nombre de usuario MTA SA" 
+							  required
+							  class="w-full px-4 py-2 rounded-lg text-black"
+							>
+							<button 
+							  type="submit" 
+							  class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg w-full"
+							>
+							  Adquirir VIP
+							</button>
+						</form>
+					</div>
+				</div>
+
+				<!-- Vehículos privados -->
+				<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vehicle-detail')">
+					<img class="mx-auto mb-4 rounded" src="assets/auto.png" alt="Red sports car">
+					<h3 class="font-semibold mb-2">Vehículos privados</h3>
+					<p>$4.000/mes - Acceso a vehículos exclusivos.</p>
+					<div id="vehicle-detail" class="detail">
+						<p class="mt-4">Incluye: Un vehículo a elección exclusivo (slot).</p>
+					</div>
+				</div>
+
+				<!-- Barrio privado -->
+				<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('barrio-detail')">
+					<img class="mx-auto mb-4 rounded" src="assets/barrio.png" alt="Barrio priv">
+					<h3 class="font-semibold mb-2">Barrio privado</h3>
+					<p>$3.000/mes - Casa en barrio privado.</p>
+					<div id="barrio-detail" class="detail">
+						<p class="mt-4">Incluye: Una casa a elección en el barrio privado.</p>
+					</div>
+				</div>
+
+				<!-- Mansion privada -->
+				<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('mansion-detail')">
+					<img class="mx-auto mb-4 rounded" src="assets/mansion.png" alt="Mansion priv">
+					<h3 class="font-semibold mb-2">Mansion privada</h3>
+					<p>$6.000/mes - Mansion moderna privada.</p>
+					<div id="mansion-detail" class="detail">
+						<p class="mt-4">Incluye: Una mansion con terraza, pileta, estacionamiento, taller, banco, baño, living, habitación, comedor, oficina, sala de juegos, sótano, helipuerto. Comandos privados para ir, invitar y expulsar jugadores.</p>
+					</div>
+				</div>
+
+				<!-- Bunker privado -->
+				<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('bunker-detail')">
+					<img class="mx-auto mb-4 rounded" src="assets/bunker.png" alt="Bunker priv">
+					<h3 class="font-semibold mb-2">Bunker privado</h3>
+					<p>$5.000/mes - Gran bunker privado.</p>
+					<div id="bunker-detail" class="detail">
+						<p class="mt-4">Incluye: Un bunker grande con muchas salas. Comandos privados para ir, invitar y expulsar jugadores.</p>
+					</div>
+				</div>
+
+				<!-- Skins privadas -->
+				<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('skin-detail')">
+					<img class="mx-auto mb-4 rounded" src="assets/skin.png" alt="Customized character">
+					<h3 class="font-semibold mb-2">Skins privadas</h3>
+					<p>$3.000/mes - Skin personalizada.</p>
+					<div id="skin-detail" class="detail">
+						<p class="mt-4">Incluye: Una skin a elección privada.</p>
+					</div>
 				</div>
 			</div>
-		</div>
-
-            <!-- Promos Section -->
-            <div class="mt-12">
+			
+			<div class="mt-12">
                 <h3 class="text-3xl font-bold mb-6 text-center">Promos</h3>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('promo-vip2')">
@@ -388,7 +405,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+		</section>  
     </main>
 
     <!-- Footer -->
