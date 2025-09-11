@@ -1,5 +1,5 @@
 :root {
-    --primary-red: #A52A2A; /* Bordó-like red */
+    --primary-red: #A52A2A;
     --white: #FFFFFF;
     --black: #000000;
 }
@@ -8,10 +8,16 @@ body {
     background: linear-gradient(135deg, var(--primary-red) 0%, var(--black) 100%);
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 .hero-bg {
-    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(165,42,42,0.3)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/236c963a-8047-4552-889e-4c6ec0abaaad.png') no-repeat center/cover;
+    background: url('assets/inicio.png') no-repeat center/cover;
     filter: contrast(1.2) brightness(0.8);
 }
 
@@ -96,6 +102,7 @@ body {
 
 footer {
     background: rgba(0,0,0,0.8);
+    margin-top: auto; /* Esto empuja el footer hacia abajo */
 }
 
 .menu-icon::before {
@@ -103,11 +110,15 @@ footer {
     font-size: 1.5em;
 }
 
-/* Animación base de fade-in hacia arriba */
+#faq {
+    min-height: 70vh;
+    padding-bottom: 3rem;
+}
+
 @keyframes fadeIn {
   from { 
     opacity: 0; 
-    transform: translateY(20px); 
+    transform: translateY(50px); 
   }
   to { 
     opacity: 1; 
@@ -126,10 +137,6 @@ footer {
 
 .delay-2 {
   animation-delay: 1s;
-}
-
-.delay-3 {
-  animation-delay: 1.5s;
 }
 
 @media (max-width: 768px) {

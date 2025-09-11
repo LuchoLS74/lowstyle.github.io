@@ -52,11 +52,11 @@
                        ¡Conectarse Ahora!
                     </a>
                     
-                    <!-- Jugadores Online - Ahora aparece debajo del botón
+                    <!-- Jugadores Online - Ahora aparece debajo del botón -->
                     <div class="mt-8 animate-fadeIn delay-3">
-                       -- <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Jugadores Online</h2>
-                       -- <p id="player-count" class="text-lg md:text-xl text-gray-200">Cargando...</p>
-                    -- </div> -->
+                       <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Jugadores Online</h2>
+                       <p id="player-count" class="text-lg md:text-xl text-gray-200">Cargando...</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -74,7 +74,7 @@
                 <div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a2')">
                     <h3 class="font-semibold">¿Es gratuito?</h3>
                     <div id="a2" class="detail">
-                        <p class="mt-2">Sí, el acceso al servidor es completamente gratuito. Sin embargo, ofrecemos servicios premium como la sección de Ventas para mejorar tu experiencia.</p>
+                        <p class="mt-2">Sí, el acceso al servidor es completamente gratuito. Sin embargo, ofrecemos servicios premium en la sección de Ventas para mejorar tu experiencia.</p>
                     </div>
                 </div>
                 <div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a3')">
@@ -89,11 +89,47 @@
                         <p class="mt-2">En Low Style, el roleplay es opcional pero recomendado para una inmersión completa.</p>
                     </div>
                 </div>
+				<div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a5')">
+                    <h3 class="font-semibold">¿Como voy a los lugares?</h3>
+                    <div id="a5" class="detail">
+                        <p class="mt-2">Usando el mapa de F11, con doble click marcas destino.</p>
+                    </div>
+                </div>
+				<div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a6')">
+                    <h3 class="font-semibold">¿Donde compro autos y motos?</h3>
+                    <div id="a6" class="detail">
+                        <p class="mt-2">En las concesionarias que hay en el mapa, usar F11 para ir.</p>
+                    </div>
+                </div>
+				<div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a7')">
+                    <h3 class="font-semibold">¿Como trabajo?</h3>
+                    <div id="a7" class="detail">
+                        <p class="mt-2">En el mapa, todas las T es un trabajo distinto. Al llegar solamente usa /trabajar y segui las indicaciones.</p>
+                    </div>
+                </div>
+				<div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a8')">
+                    <h3 class="font-semibold">¿Donde compro accesorios?</h3>
+                    <div id="a8" class="detail">
+                        <p class="mt-2">En la tienda de accesorios, usar F11 para ir.</p>
+                    </div>
+                </div>
+				<div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a9')">
+                    <h3 class="font-semibold">¿Como trabo mi auto?</h3>
+                    <div id="a9" class="detail">
+                        <p class="mt-2">Para trabar el auto tocas F1, y en el panel de autos comprados seleccionas el auto que queres trabar y le das a bloquear. Sino con la tecla L estando en tu auto.</p>
+                    </div>
+                </div>
+				<div class="faq-item card p-4 rounded-lg" onclick="toggleFAQ('a10')">
+                    <h3 class="font-semibold">¿Como uso el chat de voz?</h3>
+                    <div id="a10" class="detail">
+                        <p class="mt-2">Para hablar con otro jugador, se usa la tecla Z. Mantener apretada para hablar.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Rules Section -->
-<section id="rules" class="section container mx-auto px-4 py-16">
+		<section id="rules" class="section container mx-auto px-4 py-16">
             <h2 class="text-4xl font-bold mb-8 text-center">Reglas del servidor</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="rule-item card p-6 rounded-lg">
@@ -161,16 +197,16 @@
 
         <!-- Sales Section -->
         <section id="sales" class="section container mx-auto px-4 py-16">
-    <h2 class="text-4xl font-bold mb-8 text-center">Ventas del servidor</h2>
-
-    <div class="grid md:grid-cols-3 gap-6">
-        <!-- VIP -->
-        <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
-            <img class="mx-auto mb-4 rounded" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b56b20fb-e01e-493c-b97e-6b04157b98ec.png" alt="Golden star VIP badge">
+			<h2 class="text-4xl font-bold mb-8 text-center">Ventas del servidor</h2>
+			<div class="grid md:grid-cols-3 gap-6">
+			<!-- VIP -->
+			<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
+            <img class="mx-auto mb-4 rounded" src="assets/vip.png" alt="Golden star VIP badge">
             <h3 class="font-semibold mb-2">VIP</h3>
             <p>$5.000/mes - privilegios extra en el servidor.</p>
             <div id="vip-detail" class="detail">
-                <p class="mt-4 font-semibold">Opciones:</p>
+				<p class="mt-4">Incluye:</p>
+                <p class="mt-4 font-semibold">Opciones (para activar/desactivar):</p>
                 <ul class="list-disc list-inside mb-4">
                     <li>Regeneración de vida automática</li>
                     <li>Jetpack</li>
@@ -197,7 +233,6 @@
                 <p class="mt-4 font-semibold">Armas:</p>
                 <ul class="list-disc list-inside mb-4">
                     <li>Kit de armas</li>
-                    <li>Habilidades para todas las armas</li>
                     <li>Panel para elegir armas a elección</li>
                 </ul>
 
@@ -222,27 +257,55 @@
                 </ul>
             </div>
         </div>
-
+		
         <!-- Vehículos privados -->
         <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vehicle-detail')">
-            <img class="mx-auto mb-4 rounded" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9a20c778-cbb8-47c8-afef-4c9c7376411a.png" alt="Red sports car">
+            <img class="mx-auto mb-4 rounded" src="assets/auto.png" alt="Red sports car">
             <h3 class="font-semibold mb-2">Vehículos privados</h3>
             <p>$4.000/mes - Acceso a vehículos exclusivos.</p>
             <div id="vehicle-detail" class="detail">
                 <p class="mt-4">Incluye: Un vehículo a elección exclusivo (slot).</p>
             </div>
         </div>
+		
+		<!-- Barrio privado -->
+        <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('barrio-detail')">
+            <img class="mx-auto mb-4 rounded" src="assets/barrio.png" alt="Barrio priv">
+			<h3 class="font-semibold mb-2">Barrio privado</h3>
+			<p>$3.000/mes - Casa en barrio privado.</p>
+			<div id="barrio-detail" class="detail">
+				<p class="mt-4">Incluye: Una casa a eleccion en el barrio privado.</p>
+			</div>
+		</div>
+		
+		<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('mansion-detail')">
+            <img class="mx-auto mb-4 rounded" src="assets/mansion.png" alt="Mansion priv">
+			<h3 class="font-semibold mb-2">Mansion privada</h3>
+			<p>$6.000/mes - Mansion moderna privada.</p>
+			<div id="mansion-detail" class="detail">
+				<p class="mt-4">Incluye: Una mansion de con terraza, pileta, estacionamiento, taller, banco, baño, living, habitacion, comedor, oficina, sala de juegos, sotano, helipuerto. Y un comando para ir directo y otro comando privado para invitar y expulsar a jugadores de la mansion.</p>
+			</div>
+		</div>
+		
+		<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('bunker-detail')">
+            <img class="mx-auto mb-4 rounded" src="assets/bunker.png" alt="Mansion priv">
+			<h3 class="font-semibold mb-2">Bunker privado</h3>
+			<p>$5.000/mes - Gran bunker privado.</p>
+			<div id="bunker-detail" class="detail">
+				<p class="mt-4">Incluye: Un bunker privado grande con muchas salas. Y un comando para ir directo y otro comando privado para invitar y expulsar a jugadores del bunker.</p>
+			</div>
+		</div>
 
         <!-- Skins privadas -->
         <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('skin-detail')">
-            <img class="mx-auto mb-4 rounded" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a30a095d-fc3c-4b8c-ada7-5b172221f367.png" alt="Customized character">
-            <h3 class="font-semibold mb-2">Skins privadas</h3>
-            <p>$2.000/mes - Skin personalizada.</p>
-            <div id="skin-detail" class="detail">
-                <p class="mt-4">Incluye: Una skin a elección privada.</p>
-            </div>
-        </div>
-    </div>
+            <img class="mx-auto mb-4 rounded" src="assets/skin.png" alt="Customized character">
+				<h3 class="font-semibold mb-2">Skins privadas</h3>
+				<p>$3.000/mes - Skin personalizada.</p>
+				<div id="skin-detail" class="detail">
+					<p class="mt-4">Incluye: Una skin a elección privada.</p>
+				</div>
+			</div>
+		</div>
 
             <!-- Promos Section -->
             <div class="mt-12">
@@ -257,7 +320,7 @@
                     </div>
                     <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('promo-vip3')">
                         <h4 class="font-semibold mb-2">[VIP] por 3 meses</h4>
-                        <p>$13.000</p>
+                        <p>$14.000</p>
                         <div id="promo-vip3" class="detail">
                             <p class="mt-4">Acceso VIP por 90 días con privilegios exclusivos.</p>
                         </div>
