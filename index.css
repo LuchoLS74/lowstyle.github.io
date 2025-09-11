@@ -54,15 +54,15 @@ main {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    text-align: left; /* Alinea todo a la izquierda */
-    padding: 10px 0; /* Espacio interno */
+    text-align: left;
+    padding: 10px 0;
     transition: opacity 0.3s ease, max-height 0.5s ease;
 }
 
 .detail.open {
     opacity: 1;
-    max-height: 70vh; /* 70% de la altura de la pantalla, para móviles y escritorio */
-    overflow-y: auto; /* Permite scroll si el contenido es más alto */
+    max-height: 70vh;
+    overflow-y: auto;
 }
 
 .sale-card {
@@ -102,11 +102,11 @@ main {
 
 footer {
     background: rgba(0,0,0,0.8);
-    margin-top: auto; /* Esto empuja el footer hacia abajo */
+    margin-top: auto;
 }
 
 .menu-icon::before {
-    content: '\2630'; /* Hamburger icon using Unicode, but avoid if possible - using text instead */
+    content: '\2630';
     font-size: 1.5em;
 }
 
@@ -153,7 +153,6 @@ footer {
         padding: 8px 12px;
     }
     
-    /* Mejoras específicas para móvil */
     h1 {
         line-height: 1.2;
     }
