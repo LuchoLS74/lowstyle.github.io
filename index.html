@@ -8,17 +8,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="index.css">
-	<style>
-        .form-input {
-            font-size: 16px; /*
-            transform: translateZ(0); /*
-        }
-        
-        .sale-detail-form {
-            position: relative;
-            z-index: 10;
-        }
-    </style>
 </head>
 <body class="text-white">
     <!-- Header -->
@@ -215,7 +204,11 @@
         </section>
 
         <!-- Sales Section -->
-        <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
+        <section id="sales" class="section container mx-auto px-4 py-16">
+			<h2 class="text-4xl font-bold mb-8 text-center">Ventas del servidor</h2>
+			<div class="grid md:grid-cols-3 gap-6">
+			<!-- VIP -->
+			<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
             <img class="mx-auto mb-4 rounded" src="assets/vip.png" alt="Golden star VIP badge">
             <h3 class="font-semibold mb-2">VIP</h3>
             <p>$5.000/mes - privilegios extra en el servidor.</p>
@@ -270,24 +263,6 @@
                     <li>Audi R8</li>
                     <li>Ferrari</li>
                 </ul>
-				
-				<form id="vip-form" class="sale-detail-form mt-6 space-y-4" onsubmit="handleVIPSubmit(event)">
-					<input 
-					  type="text" 
-					  id="username" 
-					  name="username" 
-					  placeholder="Tu nombre de usuario MTA SA" 
-					  required
-					  class="form-input w-full px-4 py-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-red-500"
-					>
-					<button 
-					  type="submit" 
-					  class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg w-full transition-colors"
-					>
-					  Adquirir VIP
-					</button>
-				  </form>
-				</div>
             </div>
         </div>
 		
