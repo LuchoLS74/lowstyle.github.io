@@ -204,67 +204,84 @@
         </section>
 
         <!-- Sales Section -->
-        <section id="sales" class="section container mx-auto px-4 py-16">
-			<h2 class="text-4xl font-bold mb-8 text-center">Ventas del servidor</h2>
-			<div class="grid md:grid-cols-3 gap-6">
-			<!-- VIP -->
-			<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
-            <img class="mx-auto mb-4 rounded" src="assets/vip.png" alt="Golden star VIP badge">
-            <h3 class="font-semibold mb-2">VIP</h3>
-            <p>$5.000/mes - privilegios extra en el servidor.</p>
-            <div id="vip-detail" class="detail">
+		<!-- VIP -->
+		<div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vip-detail')">
+			<img class="mx-auto mb-4 rounded" src="assets/vip.png" alt="Golden star VIP badge">
+			<h3 class="font-semibold mb-2">VIP</h3>
+			<p>$5.000/mes - privilegios extra en el servidor.</p>
+			
+			<div id="vip-detail" class="detail">
 				<p class="mt-4">Incluye:</p>
-                <p class="mt-4 font-semibold">Opciones (para activar/desactivar):</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Regeneración de vida automática</li>
-                    <li>Jetpack</li>
-                    <li>Mira láser en las armas</li>
-                    <li>Rastro de balas</li>
-                    <li>Mensaje exclusivo en la pantalla al iniciar sesión</li>
-                    <li>Cambiar tag en el chat</li>
-                    <li>Nombre personalizado</li>
-                </ul>
+				<p class="mt-4 font-semibold">Opciones (para activar/desactivar):</p>
+				<ul class="list-disc list-inside mb-4">
+					<li>Regeneración de vida automática</li>
+					<li>Jetpack</li>
+					<li>Mira láser en las armas</li>
+					<li>Rastro de balas</li>
+					<li>Mensaje exclusivo en la pantalla al iniciar sesión</li>
+					<li>Cambiar tag en el chat</li>
+					<li>Nombre personalizado</li>
+				</ul>
 
-                <p class="mt-4 font-semibold">Inventario:</p>
-                <p>Espacio de 60/60</p>
+				<p class="mt-4 font-semibold">Inventario:</p>
+				<p>Espacio de 60/60</p>
 
-                <p class="mt-4 font-semibold">Ploteos:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Panel de ploteos</li>
-                </ul>
+				<p class="mt-4 font-semibold">Ploteos:</p>
+				<ul class="list-disc list-inside mb-4">
+					<li>Panel de ploteos</li>
+				</ul>
 
-                <p class="mt-4 font-semibold">Handlings:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Panel para guardar / cargar / importar / exportar</li>
-                </ul>
+				<p class="mt-4 font-semibold">Handlings:</p>
+				<ul class="list-disc list-inside mb-4">
+					<li>Panel para guardar / cargar / importar / exportar</li>
+				</ul>
 
-                <p class="mt-4 font-semibold">Armas:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Kit de armas</li>
-                    <li>Panel para elegir armas a elección</li>
-                </ul>
+				<p class="mt-4 font-semibold">Armas:</p>
+				<ul class="list-disc list-inside mb-4">
+					<li>Kit de armas</li>
+					<li>Panel para elegir armas a elección</li>
+				</ul>
 
-                <p class="mt-4 font-semibold">Texto personalizado:</p>
-                <p>/s (texto)</p>
+				<p class="mt-4 font-semibold">Texto personalizado:</p>
+				<p>/s (texto)</p>
 
-                <p class="mt-4 font-semibold">Teleports:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Teleports directos a todos los lugares del mapa</li>
-                </ul>
+				<p class="mt-4 font-semibold">Teleports:</p>
+				<ul class="list-disc list-inside mb-4">
+					<li>Teleports directos a todos los lugares del mapa</li>
+				</ul>
 
-                <p class="mt-4 font-semibold">Trabajos:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Trabajo de camionero VIP (paga más que el resto)</li>
-                </ul>
+				<p class="mt-4 font-semibold">Trabajos:</p>
+				<ul class="list-disc list-inside mb-4">
+					<li>Trabajo de camionero VIP (paga más que el resto)</li>
+				</ul>
 
-                <p class="mt-4 font-semibold">Autos:</p>
-                <ul class="list-disc list-inside mb-4">
-                    <li>Porsche Carrera 911</li>
-                    <li>Audi R8</li>
-                    <li>Ferrari</li>
-                </ul>
-            </div>
-        </div>
+				<p class="mt-4 font-semibold">Autos:</p>
+				<ul class="list-disc list-inside mb-4">
+					<li>Porsche Carrera 911</li>
+					<li>Audi R8</li>
+					<li>Ferrari</li>
+				</ul>
+
+				<form id="vip-form" class="mt-6 space-y-4">
+					<input 
+					  type="text" 
+					  id="username" 
+					  name="username" 
+					  placeholder="Tu nombre de usuario MTA SA" 
+					  required
+					  class="w-full px-4 py-2 rounded-lg text-black"
+					>
+					<button 
+					  type="submit" 
+					  class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg w-full"
+					>
+					  Adquirir VIP
+					</button>
+				</form>
+				
+			</div>
+		</div>
+
 		
         <!-- Vehículos privados -->
         <div class="sale-card card p-6 rounded-lg text-center" onclick="toggleSaleDetail('vehicle-detail')">
