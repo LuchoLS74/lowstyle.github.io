@@ -1,4 +1,3 @@
-
 const routes = {
     'inicio': 'home',
     'faq': 'faq',
@@ -63,56 +62,86 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-	const form = document.getElementById('vip-form');
-	if (form) {
-		form.addEventListener('submit', async function (e) {
-			e.preventDefault();
+    const form = document.getElementById('vip-form');
+    if (form) {
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-			const username = document.getElementById('username').value.trim();
-			const receipt = document.getElementById('receipt').files[0];
+            const username = document.getElementById('username').value.trim();
+            const receipt = document.getElementById('receipt').files[0];
 
-			if (!username) {
-				alert("❌ Por favor ingresa tu nombre de usuario.");
-				return;
-			}
+            // Validación básica
+            if (!username) {
+                alert("❌ Por favor ingresa tu nombre de usuario.");
+                return;
+            }
 
-			const submitButton = form.querySelector('button[type="submit"]');
-			const originalText = submitButton.textContent;
-			submitButton.textContent = 'Enviando...';
-			submitButton.disabled = true;
+            // Mostrar estado de carga
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Enviando...';
+            submitButton.disabled = true;
 
-			try {
-				const formData = new FormData();
-				formData.append('username', username);
-				formData.append('alias', 'lowstyle.mta.mp');
-				if (receipt) {
-					formData.append('receipt', receipt);
-				}
+            try {
+                const formData = new FormData();
+                formData.append('username', username);
+                formData.append('alias', 'lowstyle.mta.mp');
+                if (receipt) {
+                    formData.append('receipt', receipt);
+                }
 
-				const response = await fetch('/functions/sendEmail', {
-					method: 'POST',
-					body: formData
-				});
+                console.log('Enviando datos:', { username, hasReceipt: !!receipt });
 
-				const result = await response.json();
-				
-				if (response.ok && result.success) {
-					alert("✅ Tu comprobante fue enviado correctamente. Revisaremos el pago y activaremos tu VIP.");
-					form.reset();
-				} else {
-					console.error('Error:', result);
-					alert("❌ Hubo un error al enviar el comprobante. Por favor intenta nuevamente o contacta al soporte.");
-				}
-			} catch (error) {
-				console.error('Error de red:', error);
-				alert("❌ Error de conexión. Verifica tu internet e intenta nuevamente.");
-			} finally {
-				submitButton.textContent = originalText;
-				submitButton.disabled = false;
-			}
-		});
-	}
+                const response = await fetch('/sendEmail', {
+                    method: 'POST',
+                    body: formData
+                });
 
+                console.log('Response status:', response.status);
+                console.log('Response headers:', [...response.headers.entries()]);
+
+                // Verificar si la respuesta es válida antes de parsear JSON
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Error response:', errorText);
+                    throw new Error(`Server error: ${response.status} - ${errorText}`);
+                }
+
+                // Intentar parsear como JSON solo si hay contenido
+                const contentType = response.headers.get('content-type');
+                let result;
+                
+                if (contentType && contentType.includes('application/json')) {
+                    const responseText = await response.text();
+                    if (responseText.trim()) {
+                        result = JSON.parse(responseText);
+                    } else {
+                        result = { success: true }; // Respuesta vacía = éxito
+                    }
+                } else {
+                    result = { success: true }; // Respuesta no-JSON = éxito
+                }
+
+                console.log('Parsed result:', result);
+
+                if (result.success !== false) {
+                    alert("✅ Tu comprobante fue enviado correctamente. Revisaremos el pago y activaremos tu VIP.");
+                    form.reset();
+                } else {
+                    console.error('Error en resultado:', result);
+                    alert("❌ Hubo un error al procesar el envío: " + (result.error || 'Error desconocido'));
+                }
+
+            } catch (error) {
+                console.error('Error completo:', error);
+                alert("❌ Error al enviar: " + error.message + "\nPor favor contacta al administrador.");
+            } finally {
+                // Restaurar el botón
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    }
 });
 
 
