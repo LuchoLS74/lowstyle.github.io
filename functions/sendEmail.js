@@ -22,7 +22,7 @@ export async function onRequestPost(context) {
         });
       }
 
-      const YOUR_EMAIL = "luciiianog11@gmail.com";
+      const YOUR_EMAIL = "luciianog11@gmail.com";
 
       // Adjuntos (si subieron comprobante) - SIN usar Buffer
       let attachments = [];
