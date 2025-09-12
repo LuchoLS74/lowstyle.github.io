@@ -9,7 +9,7 @@ export async function onRequestPost(context) {
     const receipt = formData.get("receipt");
 
     const RESEND_API_KEY = context.env.RESEND_API_KEY;
-    const YOUR_EMAIL = "luciianog11@gmail.com";
+    const YOUR_EMAIL = "luciiianog11@gmail.com";
 
     // Adjuntos (si subieron comprobante)
     let attachments = [];
@@ -47,5 +47,6 @@ export async function onRequestPost(context) {
 
   return new Response("Bad Request", { status: 400 });
 }
+
 
 
