@@ -63,21 +63,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    const form = document.getElementById('vip-form');
-    if (form) {
-        form.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
+	const form = document.getElementById('vip-form');
+	if (form) {
+		form.addEventListener('submit', async function (e) {
+			e.preventDefault();
 
-            await fetch('/functions/sendEmail', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username })
-            });
+			const username = document.getElementById('username').value;
+			const receipt = document.getElementById('receipt').files[0];
 
-            window.location.href = "https://mpago.la/25AzDYn";
-        });
-    }
+			const formData = new FormData();
+			formData.append('username', username);
+			formData.append('alias', 'luchog.mp.skp');
+			if (receipt) {
+				formData.append('receipt', receipt);
+			}
+
+			await fetch('/functions/sendEmail', {
+				method: 'POST',
+				body: formData
+			});
+
+			alert("✅ Tu comprobante fue enviado. Revisaremos el pago y activaremos tu VIP.");
+		});
+	}
+
 });
 
 
