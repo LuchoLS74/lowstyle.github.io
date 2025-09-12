@@ -68,22 +68,48 @@ document.addEventListener('DOMContentLoaded', function () {
 		form.addEventListener('submit', async function (e) {
 			e.preventDefault();
 
-			const username = document.getElementById('username').value;
+			const username = document.getElementById('username').value.trim();
 			const receipt = document.getElementById('receipt').files[0];
 
-			const formData = new FormData();
-			formData.append('username', username);
-			formData.append('alias', 'luchog.mp.skp');
-			if (receipt) {
-				formData.append('receipt', receipt);
+			if (!username) {
+				alert("❌ Por favor ingresa tu nombre de usuario.");
+				return;
 			}
 
-			await fetch('/functions/sendEmail', {
-				method: 'POST',
-				body: formData
-			});
+			const submitButton = form.querySelector('button[type="submit"]');
+			const originalText = submitButton.textContent;
+			submitButton.textContent = 'Enviando...';
+			submitButton.disabled = true;
 
-			alert("✅ Tu comprobante fue enviado. Revisaremos el pago y activaremos tu VIP.");
+			try {
+				const formData = new FormData();
+				formData.append('username', username);
+				formData.append('alias', 'lowstyle.mta.mp');
+				if (receipt) {
+					formData.append('receipt', receipt);
+				}
+
+				const response = await fetch('/functions/sendEmail', {
+					method: 'POST',
+					body: formData
+				});
+
+				const result = await response.json();
+				
+				if (response.ok && result.success) {
+					alert("✅ Tu comprobante fue enviado correctamente. Revisaremos el pago y activaremos tu VIP.");
+					form.reset();
+				} else {
+					console.error('Error:', result);
+					alert("❌ Hubo un error al enviar el comprobante. Por favor intenta nuevamente o contacta al soporte.");
+				}
+			} catch (error) {
+				console.error('Error de red:', error);
+				alert("❌ Error de conexión. Verifica tu internet e intenta nuevamente.");
+			} finally {
+				submitButton.textContent = originalText;
+				submitButton.disabled = false;
+			}
 		});
 	}
 
