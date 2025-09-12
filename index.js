@@ -1,3 +1,11 @@
+
+const routes = {
+    'inicio': 'home',
+    'faq': 'faq',
+    'reglas': 'rules',
+    'ventas': 'sales'
+};
+
 function showSection(sectionId, pushHistory = true) {
     document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
 
@@ -5,8 +13,10 @@ function showSection(sectionId, pushHistory = true) {
     if (section) {
         section.classList.add('active');
 
+        const path = Object.keys(routes).find(key => routes[key] === sectionId) || sectionId;
+
         if (pushHistory) {
-            history.pushState({ section: sectionId }, '', '/' + sectionId);
+            history.pushState({ section: sectionId }, '', '/' + path);
         }
     }
 
@@ -42,12 +52,9 @@ function toggleSaleDetail(detailId) {
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Página de Low Style - MTA SA cargada correctamente');
 
-    const path = window.location.pathname.replace('/', '') || 'home';
-    if (document.getElementById(path)) {
-        showSection(path, false);
-    } else {
-        showSection('home', false);
-    }
+    let path = window.location.pathname.replace('/', '') || 'inicio';
+    const sectionId = routes[path] || 'home';
+    showSection(sectionId, false);
 
     window.addEventListener('popstate', function (event) {
         const section = event.state?.section || 'home';
@@ -72,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
 
 
 
